@@ -1,0 +1,123 @@
+/* Сброс стилей */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Установка размеров для body и html */
+  html, body {
+    height: 100%;
+    margin: 0;
+  }
+  
+  /* Фон: космос */
+  body {
+    background-image: url('/img/fon.webp');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    font-family: Arial, sans-serif;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Чтобы шапка оставалась наверху */
+  }
+
+  /* Синяя полоса как псевдоэлемент */
+body:before {
+  content: '';
+  background-color: rgba(10, 14, 46, 0.85); /* Темно-синий с прозрачностью */
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1200px;
+  height: 100vh;
+  z-index: -1;
+}
+
+/* Основной контейнер */
+.content-container {
+  max-width: 1200px; /* Такая же ширина как у синей полосы */
+  margin: 0 auto; /* Центрирование */
+  padding: 20px;
+  position: relative;
+}
+
+/* Дополнительные стили для красоты */
+.centered-content {
+  color: white; /* Белый текст для контраста */
+  text-shadow: 0 0 5px rgba(0,0,0,0.5);
+}
+
+/* Адаптивность для мобильных */
+@media (max-width: 768px) {
+  body:before {
+    width: 100%;
+    opacity: 0.7;
+  }
+  .content-container {
+    max-width: 90%;
+  }
+}
+
+  /* Меню */
+  header {
+    background-color: rgba(0, 0, 50, 0.8); /* полупрозрачный синий фон */
+    padding: 15px 0;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.6);
+  }
+  
+  nav a {
+    color: #eaeaea;
+    margin: 0 15px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+  }
+  
+  nav a:hover {
+    color: #ff5555;
+  }
+  
+  /* Контейнер для контента */
+  main {
+    flex: 1; /* займет оставшееся место на экране */
+    display: flex;
+    align-items: center; /* вертикальное выравнивание */
+    justify-content: center; /* горизонтальное выравнивание */
+    padding: 40px 20px;
+  }
+  
+  /* Блок с текстом */
+  .overlay {
+    background-color: rgba(0, 0, 30, 0.92); /* полупрозрачный тёмно-синий */
+    padding: 40px 60px;
+    border-radius: 16px;
+    max-width: 800px;
+    width: 90%;
+    text-align: center;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.7); /* внешняя тень */
+    backdrop-filter: blur(2px); /* размытие фона за блоком */
+  }
+  
+  /* Заголовок */
+  .overlay h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #cc0000;
+    text-shadow: 0 0 10px #cc0000, 2px 2px 5px black;
+  }
+  
+  /* Параграфы */
+  .overlay p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-bottom: 15px;
+  }
+  
