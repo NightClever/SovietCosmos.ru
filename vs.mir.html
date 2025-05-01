@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Soviet Cosmos</title>
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+  <body style="display: flex; flex-direction: column; height: 100vh; justify-content: flex-start;">
+    <div id="menu-placeholder"></div>
+  
+    <script>
+      fetch('menu.html')
+        .then(res => res.text())
+        .then(html => {
+          document.getElementById('menu-placeholder').innerHTML = html;
+        });
+    </script>
+  
+  <div class="content-container">
+    <div class="centered-content">
+      <h1>Скоро!</h1>
+    </div>
+  </div>
+  </body>
+</html>
+</html>
