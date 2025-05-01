@@ -1,0 +1,107 @@
+<div class="navbar">
+  <a href="/index.html" class="active">Главная</a>
+  <div class="dropdown">
+    <a>Якутия в космосе</a>
+    <div class="dropdown-content">
+      <a href="/ykt1.html">История участия</a>
+      <a href="/ykt2.html">Известные учёные</a>
+    </div>
+  </div>
+  <div class="dropdown">
+    <a>Выдающиеся личности</a>
+    <div class="dropdown-content">
+      <a href="vl.letchiki-cosmonavty.html">Летчики-космонавты</a>
+      <a href="vl.inzenery-constryktory.html">Инженеры-конструкторы</a>
+    </div>
+  </div>
+  <div class="dropdown">
+    <a>Космические программы</a>
+    <div class="dropdown-content">
+      <a href="cp.neypravliaemie-poleti.html">Неуправляемые полеты</a>
+      <a href="cp.ypravliaemie-poleti.html">Полеты с участием космонавтов</a>
+      <a href="cp.drygie.html">Другие</a>
+    </div>
+  </div>
+  <div class="dropdown">
+    <a>Важнейшие события</a>
+    <div class="dropdown-content">
+      <a href="vs.perviy-polet.html">Полет Юрия Гагарина</a>
+      <a href="vs.spurnik-1.html">Первый спутник</a>
+      <a href="vs.mir.html">Станция Мир</a>
+    </div>
+  </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const starsCount = 100;
+    const body = document.body;
+    
+    for (let i = 0; i < starsCount; i++) {
+      const star = document.createElement('div');
+      star.className = 'star';
+      
+      // Случайные параметры для звёзд
+      const size = Math.random() * 3;
+      const posX = Math.random() * window.innerWidth;
+      const posY = Math.random() * window.innerHeight;
+      const delay = Math.random() * 5;
+      const duration = 2 + Math.random() * 3;
+      
+      star.style.width = `${size}px`;
+      star.style.height = `${size}px`;
+      star.style.left = `${posX}px`;
+      star.style.top = `${posY}px`;
+      star.style.animationDelay = `${delay}s`;
+      star.style.animationDuration = `${duration}s`;
+      
+      body.appendChild(star);
+    }
+  });
+</script>
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    .navbar {
+      display: flex;
+      background-color: #1a1a1a;
+      padding: 0;
+    }
+
+    .navbar .dropdown {
+      position: relative;
+    }
+
+    .navbar a {
+      color: white;
+      padding: 16px 20px;
+      display: block;
+      text-decoration: none;
+    }
+
+    .navbar a:hover,
+    .navbar .active {
+      background-color: red;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #333;
+      min-width: 200px;
+      z-index: 1;
+    }
+
+    .dropdown-content a {
+      padding: 12px 16px;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+  </style>
